@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour Léontina ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#2a221e 0%,#0f0e0e 60%);display:flex;align-items:center;justify-content:center;padding:20px;font-family:'Cormorant Garamond',serif}
+  .card{background:#fffaf3;max-width:500px;width:100%;padding:50px 40px;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5);text-align:center;position:relative}
+  .for{letter-spacing:.3em;text-transform:uppercase;font-size:11px;opacity:.6}
+  .name{font-family:'Great Vibes',cursive;font-size:58px;margin:10px 0;color:#1a1210}
+  .line{width:40px;height:1px;background:#c9a88a;margin:15px auto}
+  input{width:100%;padding:14px;border-radius:10px;border:1px solid #e8d5c3;font-size:16px;margin-top:20px;text-align:center;font-family:inherit}
+  button{margin-top:15px;background:#1a1210;color:#fffaf3;border:0;padding:14px 24px;border-radius:10px;width:100%;font-size:16px;cursor:pointer}
+  #content{display:none;text-align:left;line-height:1.8;font-size:19px;color:#2b211d}
+  #content p{margin-bottom:18px}
+  .sig{font-family:'Great Vibes',cursive;font-size:36px;text-align:right;margin-top:30px}
+  #err{color:#b33;display:none;margin-top:10px;font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 : CADENAS -->
+<div class="card" id="lock">
+  <div class="for">Surprise pour</div>
+  <div class="name">Léontina</div>
+  <div class="line"></div>
+  <p>Une petite surprise pour toi 💌<br>Entre le mot secret</p>
+  <input id="pass" placeholder="19 janvier...">
+  <button onclick="check()">Ouvrir mon cadeau</button>
+  <div id="err">Mauvais code 🥺 Indice : mon anniversaire</div>
+</div>
+
+<!-- PAGE 2 : LETTRE -->
+<div class="card" id="content">
+  <div class="for" style="text-align:center">Pour toi</div>
+  <div class="name" style="text-align:center">Léontina</div>
+  <div class="line"></div>
+  <p>Une petite surprise pour toi.</p>
+  <p>Juste un bon moment comme ça que j'aimerais passer avec toi. Rien de compliqué, juste toi, moi, et ce calme qui nous ressemble.</p>
+  <p>Tu es importante pour moi, Léontina. Vraiment.</p>
+  <div class="sig">Toujours toi</div>
+  <div style="text-align:center;margin-top:25px;color:#c9a88a;letter-spacing:.3em">— ♥ —</div>
+</div>
+
+<script>
+function check(){
+  let v=document.getElementById('pass').value.toLowerCase().trim();
+  if(v.includes("19")){
+    document.getElementById('lock').style.display='none';
+    document.getElementById('content').style.display='block';
+  } else {
+    document.getElementById('err').style.display='block';
+  }
+}
+</script>
+</body>
+</html>
